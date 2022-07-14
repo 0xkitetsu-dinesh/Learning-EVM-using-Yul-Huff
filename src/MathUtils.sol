@@ -33,9 +33,9 @@ contract MathUtils {
                 }
 
             }
-            // mstore(0,factorial(x))
-            // return(0,0x20)
-            y := factorial(x)
+            mstore(0,factorial(x))
+            return(0,0x20)
+            // y := factorial(x)
 
         }
     }
