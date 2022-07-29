@@ -36,6 +36,35 @@
         
     }
 
+#define macro FACTORIAL() = takes (0) returns (0){
+    0x04 calldataload // a
+}
+
+/* // working
+PUSH1 0x04
+calldataload
+dup1
+jumpdest
+push1 0x01
+swap1
+sub
+dup1
+push1 0x13
+jumpi
+mstore
+push1 0x20
+push1 0x00
+return
+jumpdest
+dup1
+swap2
+mul
+swap1
+push1 0x04
+jump
+*/
+
+
 #define macro MAIN() = takes (0) returns (0) {
     // Identify which function is being called.
     0x00 calldataload 0xE0 shr
