@@ -5,6 +5,10 @@ contract MathUtils {
     // function sqrt(uint256 number) public returns()
 
     function square(uint256 x) public pure returns (uint256 ){
+        return x * x;
+    }
+
+    function square_Yul(uint256 x) public pure returns (uint256 ){
         assembly{
             mstore(0,mul(x,x))
             return(0,0x20)
@@ -12,7 +16,7 @@ contract MathUtils {
     }
 
     // Factorial
-    function factorial(uint256 x) public pure returns (uint256 y) {
+    function factorial(uint256 x) public pure returns (uint256) {
         if (x == 0) {
             return 1;
         } else {
@@ -21,7 +25,7 @@ contract MathUtils {
     }
 
     // Factorial Using Yul - with assembly fn
-    function factorial_Yul(uint256 x) public pure returns(uint256 y){
+    function factorial_Yul(uint256 x) public pure returns(uint256){
         assembly{
             function factorial(num) -> result{
                 switch num
