@@ -74,7 +74,7 @@ contract MathUtilsTest is Test {
         uint256 gasCost_YulSquare;
         uint256 gasCost_HuffSquare;
         uint256 res1;uint256 res2;uint256 res3;
-        console.log("------------------Square Gas Comparision -----------------");
+        console.log("------ Square Gas Comparision ----------");
         console.log("n, Sol,  Yul,  Huff");
         for(uint256 num=start_index;num<=end_index;num++){
             gasLeft = gasleft();
