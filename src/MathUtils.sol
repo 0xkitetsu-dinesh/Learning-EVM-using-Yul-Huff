@@ -43,4 +43,17 @@ contract MathUtils {
 
         }
     }
+    
+    // https://twitter.com/leonardoalt/status/1553835565056942085
+    // https://gist.github.com/leonardoalt/52693c9681faed3ddd60e96eed84b877
+    function factorial_Yul_For(uint256 x) public pure returns(uint256){
+        assembly{
+            let result := 1
+            for {} iszero(iszero(x)) { x := sub(x, 1)} {
+                result := mul(result, x)
+            }
+            mstore(0,result)
+            return(0,0x20)
+        }
+    }
 }
